@@ -1,8 +1,7 @@
 import $ from "jqmin";
-
 import { AX6Util as U, AX6UISideNav as SideNav } from "ax6ui";
 import "ax6ui/AX6UISideNav/style.scss";
-import "./assets/sample.scss";
+import "./src/assets/sample.scss";
 
 
 let $slide_out;

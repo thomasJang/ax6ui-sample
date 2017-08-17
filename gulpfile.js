@@ -30,14 +30,14 @@ const fnObj = {
 };
 
 // 걸프 기본 타스크
-gulp.task('default', [], function () {
+gulp.task('default', ['npm start'], function () {
   return true;
 });
 
-gulp.task('samples npm start', shell.task([
+gulp.task('npm start', shell.task([
   'npm start',
 ]));
 
-gulp.task('samples deploy', shell.task([
-  './samples-deploy.sh',
+gulp.task('ax6ui.com deploy', shell.task([
+  './ax6ui.com-deploy.sh',
 ]));
