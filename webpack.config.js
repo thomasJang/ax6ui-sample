@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+let debug = process.env.NODE_ENV !== "production";
 let entry = {
   index: './index.js'
 };
@@ -52,14 +53,15 @@ module.exports = {
   plugins: plugins,
   output: {
     path: path.resolve(__dirname, 'docs'),
-    filename: '[name].js'
+    filename: '[name].js',
+    sourceMapFilename: '[name].js.map'
   },
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
     port: 4000
   },
-  devtool: 'inline-source-map',
+  devtool: 'cheap-source-map',
   module: {
     rules: [
       {test: /\.css$/, use: 'css-loader'},
