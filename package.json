@@ -50,7 +50,7 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
-    "ax6ui": "^0.7.16",
+    "ax6ui": "^0.7.20",
     "axios": "^0.16.2",
     "jqmin": "^0.1.0"
   }

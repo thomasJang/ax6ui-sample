@@ -1,5 +1,6 @@
 import $ from "jqmin";
-import { AX6UIPicker as Picker } from "ax6ui";
+import U from "ax6ui/AX6Util";
+import Picker from "ax6ui/AX6UIPicker";
 import "ax6ui/AX6UICalendar/style.scss";
 import "ax6ui/AX6UIPalette/style.scss";
 import "ax6ui/AX6UIPicker/style.scss";
@@ -113,11 +114,11 @@ let fn = {
         today: {
           label: "오늘", theme: "waves-effect waves-light btn blue-grey", onClick: function () {
             if (this.item.inputLength == 1) {
-              this.self.setContentValue(this.item.id, 0, util.date(new Date(), {"return": "yyyy-MM-dd"}));
+              this.self.setContentValue(this.item.id, 0, U.date(new Date(), {"return": "yyyy-MM-dd"}));
             }
             else {
-              this.self.setContentValue(this.item.id, 0, util.date(new Date(), {"return": "yyyy-MM-dd"}));
-              this.self.setContentValue(this.item.id, 1, util.date(new Date(), {"return": "yyyy-MM-dd"}));
+              this.self.setContentValue(this.item.id, 0, U.date(new Date(), {"return": "yyyy-MM-dd"}));
+              this.self.setContentValue(this.item.id, 1, U.date(new Date(), {"return": "yyyy-MM-dd"}));
               this.self.close();
             }
           }
@@ -126,11 +127,11 @@ let fn = {
           label: "이번달 1일", theme: "waves-effect waves-light btn blue-grey", onClick: function () {
             var today = new Date();
             if (this.item.inputLength == 1) {
-              this.self.setContentValue(this.item.id, 0, util.date(today, {"return": "yyyy-MM-01"}));
+              this.self.setContentValue(this.item.id, 0, U.date(today, {"return": "yyyy-MM-01"}));
             }
             else {
-              this.self.setContentValue(this.item.id, 0, util.date(today, {"return": "yyyy-MM-01"}));
-              this.self.setContentValue(this.item.id, 1, util.date(today, {"return": "yyyy-MM"}) + '-' + util.daysOfMonth(today.getFullYear(), today.getMonth()));
+              this.self.setContentValue(this.item.id, 0, U.date(today, {"return": "yyyy-MM-01"}));
+              this.self.setContentValue(this.item.id, 1, U.date(today, {"return": "yyyy-MM"}) + '-' + U.daysOfMonth(today.getFullYear(), today.getMonth()));
               this.self.close();
             }
           }
@@ -140,8 +141,8 @@ let fn = {
       onStateChanged: function (a) {
         if (this.state == "open") {
           if (this.item && this.item.calendar) {
-            this.item.pickerCalendar[0].calendar.setSelection([util.date(today, {'add': {d: 0}})]);
-            if (this.item.pickerCalendar[1]) this.item.pickerCalendar[1].calendar.setSelection([util.date(today, {'add': {d: 0}})]);
+            this.item.pickerCalendar[0].calendar.setSelection([U.date(today, {'add': {d: 0}})]);
+            if (this.item.pickerCalendar[1]) this.item.pickerCalendar[1].calendar.setSelection([U.date(today, {'add': {d: 0}})]);
           }
         }
         else if (this.state == "changeValue") {
