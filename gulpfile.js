@@ -16,11 +16,7 @@ const exec = require('gulp-exec');
 // 전역 오브젝트 모음
 const fnObj = {
   paths: {
-    src: 'src/',
-    dist_es6: 'dist/ES6/',
-    dist_es5: 'dist/ES5/',
-    scss: 'scss/',
-    css: 'css/'
+
   },
   errorAlert(error) {
     notify.onError({title: "Gulp Error", message: "Check your terminal", sound: "Purr"})(error); //Error Notification
@@ -30,14 +26,14 @@ const fnObj = {
 };
 
 // 걸프 기본 타스크
-gulp.task('default', ['npm start'], function () {
+gulp.task('default', ['run server'], function () {
   return true;
 });
 
-gulp.task('npm start', shell.task([
-  'npm start',
+gulp.task('run server', shell.task([
+  'webpack-dev-server --env=d',
 ]));
 
-gulp.task('ax6ui.com deploy', shell.task([
-  './ax6ui.com-deploy.sh',
+gulp.task('deploy to docs', shell.task([
+  'webpack -p --env=p --progress --profile --colors',
 ]));

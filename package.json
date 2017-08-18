@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "start": "webpack-dev-server --env=d",
+    "build:dist": "webpack -p --env=p --progress --profile --colors"
   },
   "author": "tom@axisj.com",
   "repository": {
@@ -50,7 +50,7 @@
     "webpack-dev-server": "^2.5.1"
   },
   "dependencies": {
-    "ax6ui": "^0.7.13",
+    "ax6ui": "^0.7.16",
     "axios": "^0.16.2",
     "jqmin": "^0.1.0"
   }

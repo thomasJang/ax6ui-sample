@@ -1,5 +1,7 @@
 import $ from "jqmin";
-import { AX6Util as U, AX6UISideNav as SideNav } from "ax6ui";
+//import { AX6Util as U, AX6UISideNav as SideNav } from "ax6ui";
+import U from "ax6ui/AX6Util";
+import SideNav from "ax6ui/AX6UISideNav";
 import "ax6ui/AX6UISideNav/style.scss";
 import "./src/assets/sample.scss";
 
